@@ -34,4 +34,4 @@ class UsuarioModel
     }
 }
 
-module.exports = UsuarioModel
+module.exports = UsuarioModel;
