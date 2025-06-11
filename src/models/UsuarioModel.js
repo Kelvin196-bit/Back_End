@@ -4,12 +4,19 @@ class UsuarioModel
     static lista = [{
         id: 1,
         usuario: 'admin',
-        login: 'admin'},
+        login: 'admin',
+        senha: '123123'},
     {
         id: 2,
         usuario: 'teste',
-        login: 'teste'}];
+        login: 'teste',
+        senha: '123123'}];
 
+    static authenticate(login,senha){
+        const indice = UsuarioModel.lista.findIndex(item => item.login===login && item.senha===senha)
+        console.log(indice)
+        return UsuarioModel.lista[indice]
+    }
     static listar(){
         return UsuarioModel.lista;
 
