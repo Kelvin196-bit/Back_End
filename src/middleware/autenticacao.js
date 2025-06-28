@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 function autenticacaoMiddleware(request,response, next) {
-    return next(); //Atenção!! Remover esse Return Next. Coloquei apenas para teste
     console.log(request.headers.token)
 
     let auth = false
@@ -14,9 +13,9 @@ function autenticacaoMiddleware(request,response, next) {
             jwt.verify(token, process.env.APP_KEY_TOKEN)
             auth = true
         }
-        catch(e)
+        catch(JsonWebTokenError)
         {
-            return response.status(403).send(e)
+            return response.status(403).send("token inválido", JsonWebTokenError )
         }
         
     }

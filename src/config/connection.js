@@ -3,7 +3,7 @@ const {Sequelize} = require("sequelize");
 const connection = new Sequelize({
     dialect: "mysql",
     database: "digital_store", //Alterar para o projeto atual
-    host: "localhost",
+    host: "127.0.0.1",
     username: "root",
     password: "root",
     port: "3306"

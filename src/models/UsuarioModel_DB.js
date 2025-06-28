@@ -3,6 +3,7 @@ const connection = require('../config/connection');
 
 class Usuarios extends Model {}
 
+//fiz esse usando classe Model para exercitar 
 Usuarios.init(
   {
     id: 
@@ -22,7 +23,8 @@ Usuarios.init(
         }, 
     email: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true,
+            unique: true 
         }, 
     password: {
             type: DataTypes.STRING,
@@ -34,7 +36,6 @@ Usuarios.init(
   },
 );
 
-connection.sync({alter: true})
 
 module.exports = Usuarios
 
