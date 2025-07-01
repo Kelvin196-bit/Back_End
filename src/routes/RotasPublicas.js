@@ -13,10 +13,12 @@ RotasPublicas.post('/login', async(request, response) => {
     console.log(dados)
     if (dados){
         const token = jwt.sign(dados, process.env.APP_KEY_TOKEN, { expiresIn: '1h' })
+        console.log(dados)
         return response.json({
-            token: token
+            token: token,
+            usuario: dados
         })}
-    return response.json({
+    return response.status(404).json({
         message: "Login ou senha incorreto "
     })
 })

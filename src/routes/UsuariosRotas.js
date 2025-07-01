@@ -8,6 +8,6 @@ UsuariosRotas.get('/v1/user/:id', UsuariosController.consultarPorId)
 // UsuariosRotas.post('/v1/user', UsuariosController.criar) movido para rotas publicas pois cadastro não precisa de autenticação
 UsuariosRotas.put('/v1/user/:id', UsuariosController.atualizar)
 UsuariosRotas.delete('/v1/user/:id', UsuariosController.deletar)
-
+UsuariosRotas.post('/v1/user/:id', UsuariosController.consultarPorId)
 
 module.exports= UsuariosRotas;
